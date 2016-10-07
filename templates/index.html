@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#age">Survival Rates by Age</a></li>
+        <li><a href="#sex">Survival Rates by Sex</a></li>
+        <li><a href="#class">Survival Rates by Class</a></li>
+      </ul>
+    </nav>
+    <a name="age"></a>
+      <h1>Survival Rates by Age</h1>
+    <table border = "1">
+      <tr>
+        <th>Age</th>
+        <th>Rate</th>
+      </tr>
+      {% for row in rates_age %}
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+        </tr>
+      {% endfor %}
+  </table>
+  <!-- <a href="/age">Click to see histogram</a> -->
+  <img src='static/temp/{{age_graph}}'>
+  <a name="sex"></a>
+    <h1>Survival Rates by Sex</h1>
+    <table border = "1">
+      <tr>
+        <th>Sex</th>
+        <th>Rate</th>
+      </tr>
+      {% for row in rates_sex %}
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+        </tr>
+      {% endfor %}
+      <img src='static/temp/{{sex_graph}}'>
+  </table>
+  <!-- <a href="/sex">Click to see histogram</a> -->
+  <a name="class"></a>
+    <h1>Survival Rates by Class</h1>
+    <table border = "1">
+      <tr>
+        <th>Class</th>
+        <th>Rate</th>
+      </tr>
+      {% for row in rates_class %}
+        <tr>
+          <td>{{row[0]}}</td>
+          <td>{{row[1]}}</td>
+        </tr>
+      {% endfor %}
+  </table>
+  <img src='static/temp/{{class_graph}}'>
+  <!-- <a href="/class">Click to see histogram</a> -->
+
+  </body>
+</html>
